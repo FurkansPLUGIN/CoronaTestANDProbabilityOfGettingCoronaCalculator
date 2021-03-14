@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IDdeneme.Tabbed_pageControl"
+            xmlns:local="clr-namespace:IDdeneme"
+              BackgroundColor="Black"
+               >
+
+    <ContentPage Title="ID" IconImageSource="touch.png" WidthRequest="300">
+        <Frame VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="#0e75b8" BorderColor="#cce2f0"
+           CornerRadius="35">
+            <StackLayout >
+                <Button Text="Biometrik doğrulama" x:Name="AuthButton"    
+                Clicked="AuthButton_Clicked"    
+           HorizontalOptions="Center"    
+           VerticalOptions="CenterAndExpand"  FontSize="Large" FontAttributes="Bold" TextColor="Black"
+                BackgroundColor="#cce2f0" BorderColor="Black" BorderWidth="4" CornerRadius="10"
+                HeightRequest="90"/>
+            </StackLayout>
+        </Frame>
+    </ContentPage>
+
+    <ContentPage Title="BARCODE" IconImageSource="qr_code.png">
+        <ScrollView>
+            <Frame VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="#0e75b8" BorderColor="#cce2f0"
+           CornerRadius="35">
+                <StackLayout>
+                    <StackLayout x:Name="codeqr" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                         BackgroundColor="#cce2f0">
+                       
+                    </StackLayout>
+
+                    <Entry Placeholder="Kare kod değerini girin" PlaceholderColor="Black" 
+                   x:Name="giris" BackgroundColor="#cce2f0" IsPassword="False" 
+                   FontSize="25" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"
+                  VerticalOptions="EndAndExpand"></Entry>
+                    
+
+                    <Button Text="KARE KOD AL" x:Name="qr"    
+                Clicked="qr_Clicked"  
+           HorizontalOptions="Center"    
+           VerticalOptions="EndAndExpand"  FontSize="Large" FontAttributes="Bold" TextColor="Black"
+                BackgroundColor="#cce2f0" BorderColor="Black" BorderWidth="4" CornerRadius="10"
+                HeightRequest="90"/>
+
+                    
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </ContentPage>
+
+    <ContentPage Title="BARCODE VALUE" IconImageSource="folders.png">
+        <ScrollView>
+            <Frame VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="#0e75b8" BorderColor="#cce2f0"
+           CornerRadius="35">
+                <StackLayout>
+                    <ListView x:Name="listem" ItemSelected="listem_ItemSelected"
+                              IsPullToRefreshEnabled="True" Refreshing="listem_Refreshing" 
+                              IsVisible="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="{Binding MYvalue}" TextColor="Black"
+                                           FontSize="20"></Label>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </ContentPage>
+
+
+
+
+    <!--<NavigationPage Title="PARMAK İZİ DOĞRULAMA" IconImageSource="touch.png" >
+        <x:Arguments>
+            <local:MainPage></local:MainPage>
+        </x:Arguments>
+    </NavigationPage>-->
+</TabbedPage>

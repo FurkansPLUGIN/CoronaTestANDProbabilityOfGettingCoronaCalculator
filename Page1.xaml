@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IDdeneme.Page1">
+    
+    <Frame VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="#0e75b8" BorderColor="#cce2f0"
+           CornerRadius="35">
+        <StackLayout>
+            
+            <StackLayout x:Name="codeqr" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                         BackgroundColor="#cce2f0">
+            </StackLayout>
+
+            <Entry Placeholder="Kare kod değerini girin" PlaceholderColor="Black" 
+                   x:Name="giris" BackgroundColor="#cce2f0" IsPassword="False" 
+                   FontSize="25" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"
+                  VerticalOptions="EndAndExpand"></Entry>
+            
+            <Button Text="KARE KOD AL" x:Name="qr"    
+                Clicked="qr_Clicked"  
+           HorizontalOptions="Center"    
+           VerticalOptions="EndAndExpand"  FontSize="Large" FontAttributes="Bold" TextColor="Black"
+                BackgroundColor="#cce2f0" BorderColor="Black" BorderWidth="4" CornerRadius="10"
+                HeightRequest="90"/>
+
+            <Image x:Name="resultImage"></Image>
+            <Button Text="EKRAN GÖRÜNTÜSÜ" x:Name="senat" Clicked="senat_Clicked"></Button>
+        </StackLayout>
+       
+    </Frame>
+</ContentPage>
